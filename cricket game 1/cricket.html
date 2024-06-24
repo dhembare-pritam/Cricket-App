@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <title>cricket game</title>
+  <style>
+    body{
+      text-align: center;
+      color: green;
+      text-decoration: dotted;
+      text-transform: capitalize;
+    }
+    button{
+      text-align: center;
+      color: red;
+      background-color: pink;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>bat ball stump game</h1>
+  <button onclick="
+    // this will generate randomnumber between 0 and 3
+    generatecomputerchoice();
+    result();
+  ">bat</button>
+  
+  <button
+  onclick="
+    // this will generate randomnumber between 0 and 3
+    generatecomputerchoice();
+
+    if(computerchoice === 'ball'){
+      resultmsg ='its tie';
+    }else if(computerchoice === 'bat'){
+      resultmsg =`computer won`;
+    }else if(computerchoice === 'stump'){
+      resultmsg = 'user won';
+    }
+    alert(`you have chosen ball. computer choice is ${computerchoice} and ${resultmsg}`);
+  ">ball</button>
+  <button onclick="
+    // this will generate randomnumber between 0 and 3
+    generatecomputerchoice();
+
+    if(computerchoice === 'ball'){
+      resultmsg ='computer won';
+    }else if(computerchoice === 'bat'){
+      resultmsg =`user won`;
+    }else if(computerchoice === 'stump'){
+      resultmsg = 'it is tie';
+    }
+    alert(`you have chosen stump. computer choice is ${computerchoice} and ${resultmsg}`);
+  ">stump</button>
+
+  <script>
+    let computerchoice;
+    function generatecomputerchoice(){
+      let randomnumber = Math.random() * 3;
+    if(randomnumber > 0 && randomnumber <= 1){
+      computerchoice = 'bat';
+    } else if(randomnumber > 1 && randomnumber <= 2){
+       computerchoice = 'ball';
+    }else{
+       computerchoice = 'stump';
+    }
+    }
+
+    let resultmsg;
+    function result(){
+      if(computerchoice === 'ball'){
+        resultmsg ='user.won';
+      }else if(computerchoice === 'bat'){
+        resultmsg =`it's a tie`;
+      }else if(computerchoice === 'stump'){
+        resultmsg = 'computer has won';
+      }
+      alert(`you have chosen bat. computer choice is ${computerchoice} and ${resultmsg}`);
+    }
+  </script>
+
+  <!-- <script>
+    let age = 21;
+    console.log(age > 12);
+    console.log(age < 4);
+
+    if(age > 12 && age < 4){
+      console.log('you can use four wheeler');
+    } else{
+      console.log('you can use cycle');
+    }
+
+    if(age > 12 || age < 4){
+      console.log('you can use four wheeler');
+    } else{
+      console.log('you can use cycle');
+    }
+  </script> -->
+</body>
+</html>
